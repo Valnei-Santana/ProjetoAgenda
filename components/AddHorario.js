@@ -34,6 +34,7 @@ const AddHorario = (props) => {
     userId: userid,
     alarme: false
   });
+  props.closeModal();
     }
 
  

@@ -1,16 +1,16 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import { ImageBackground, Text, View, StyleSheet, Image } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { Button } from 'react-native-elements'
 import { Ionicons, Fontisto, MaterialIcons } from '@expo/vector-icons';
 import firebase from './../firebase';
 import errorTranslate from './Translate'
+import MyContext from './../contexts/MyContext'
 
 export default function Login({navigation}) {
   const image = { uri: "https://cdn2.vectorstock.com/i/1000x1000/82/26/background-time-clock-calendar-idea-vector-24348226.jpg" };
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const {email, setEmail, password, setPassword} = useContext(MyContext)
   const [erro, setErro] = useState('')
     function navegarSucess(){
         navigation.navigate('Minha agenda')
